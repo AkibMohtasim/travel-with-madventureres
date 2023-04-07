@@ -43,6 +43,13 @@ const router = createBrowserRouter([
         </PrivateRoute>
       },
       {
+        path: '/orders/:orderEmail',
+        loader: ({ params }) => fetch(`http://localhost:5000/api/orders/${params.orderEmail}`),
+        element: <PrivateRoute>
+          <MyOrders />
+        </PrivateRoute>
+      },
+      {
         path: '/login',
         element: <Login />
       },

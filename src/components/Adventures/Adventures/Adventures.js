@@ -12,7 +12,13 @@ const Adventures = () => {
       .then(data => setAdventures(data))
   }, [])
 
-  console.log(adventures)
+  // console.log(adventures)
+
+  if (!adventures.length) {
+    return <div className='flex justify-center my-20'>
+      <button className="btn btn-square loading"></button>
+    </div>
+  }
 
   return (
     <div className='grid lg:grid-cols-3 gap-5'>

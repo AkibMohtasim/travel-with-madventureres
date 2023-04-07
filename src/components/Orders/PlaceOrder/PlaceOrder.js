@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../../contexts/AuthProvider';
 
 const PlaceOrder = () => {
 
-  const { _id, name, price, email } = useLoaderData();
+  const { user } = useContext(AuthContext);
+
+  const { _id, name, price, images, duration, locations } = useLoaderData();
 
   const orderHandler = event => {
     event.preventDefault();
@@ -43,38 +46,46 @@ const PlaceOrder = () => {
 
   return (
     <div>
-      <div className='text-center mt-20'>
-        <h2>Place Your Order for: {name}</h2>
-        <p>Price: bdt {price}</p>
+      <div className="hero min-h-[50vh]" style={{ backgroundImage: `url(${images[0]})` }}>
+        <div className="hero-overlay bg-opacity-60"></div>
+        <div className="hero-content text-center text-neutral-content">
+          <div className="max-w-md">
+            <h1 className="mb-5 text-5xl font-bold">{name}</h1>
+            <p className="mb-5">{duration}</p>
+            <p className="mb-5">Locations: {locations}</p>
+            <p className="mb-5">Price: {price} Bdt</p>
+            <form onSubmit={orderHandler} className="form-control w-full max-w-xs mx-auto my-10 text-black">
+              <div>
+                <label className="label">
+                  <span className="label-text text-white">Name</span>
+                </label>
+                <input type="text" name="name" placeholder="Full Name" className="input input-bordered w-full max-w-xs" defaultValue={user.displayName} required />
+              </div>
+              <div>
+                <label className="label">
+                  <span className="label-text text-white">Email</span>
+                </label>
+                <input type="text" name='email' placeholder="email" defaultValue={user.email} className="input input-bordered w-full max-w-xs" readOnly />
+              </div>
+              <div>
+                <label className="label">
+                  <span className="label-text text-white">When You want to go?</span>
+                </label>
+                <input type="date" name='date' className="input input-bordered w-full max-w-xs" required />
+              </div>
+              <div>
+                <label className="label">
+                  <span className="label-text text-white">Additional Message</span>
+                </label>
+                <textarea name="message" className="textarea textarea-bordered w-80 text-white" placeholder="Additional Message"></textarea>
+              </div>
+              <button type="submit" className="btn btn-outline text-white mt-2">Submit</button>
+            </form>
+          </div>
+        </div>
       </div>
 
-      <form onSubmit={orderHandler} className="form-control w-full max-w-xs mx-auto my-20">
-        <div>
-          <label className="label">
-            <span className="label-text">Name</span>
-          </label>
-          <input type="text" name="name" placeholder="Full Name" className="input input-bordered w-full max-w-xs" required />
-        </div>
-        <div>
-          <label className="label">
-            <span className="label-text">Email</span>
-          </label>
-          <input type="text" name='email' placeholder="email" defaultValue={email} className="input input-bordered w-full max-w-xs" />
-        </div>
-        <div>
-          <label className="label">
-            <span className="label-text">When You want to go?</span>
-          </label>
-          <input type="date" name='date' className="input input-bordered w-full max-w-xs" required />
-        </div>
-        <div>
-          <label className="label">
-            <span className="label-text">Additional Message</span>
-          </label>
-          <textarea name="message" className="textarea textarea-bordered w-80" placeholder="Additional Message"></textarea>
-        </div>
-        <button type="submit" className="btn btn-active btn-ghost">Submit</button>
-      </form>
+
     </div>
   );
 };

@@ -14,7 +14,9 @@ const SignUp = () => {
   const signUpHandler = (event) => {
     event.preventDefault();
     const form = event.target;
-    const name = form.name.value;
+    const firstName = form.firstName.value;
+    const lastName = form.lastName.value;
+    const name = `${firstName} ${lastName}`
     const email = form.email.value;
     const password = form.password.value;
     const confirm = form.confirm.value;
@@ -62,9 +64,15 @@ const SignUp = () => {
       <form onSubmit={signUpHandler} className="form-control w-full max-w-xs mx-auto my-10">
         <div>
           <label className="label">
-            <span className="label-text">Name</span>
+            <span className="label-text">First Name</span>
           </label>
-          <input type="text" name='name' placeholder="name" className="input input-bordered w-full max-w-xs" required />
+          <input type="text" name='firstName' placeholder="first name" className="input input-bordered w-full max-w-xs" required />
+        </div>
+        <div>
+          <label className="label">
+            <span className="label-text">Last Name</span>
+          </label>
+          <input type="text" name='lastName' placeholder="last name" className="input input-bordered w-full max-w-xs" required />
         </div>
         <div>
           <label className="label">

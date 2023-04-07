@@ -43,7 +43,7 @@ const Header = () => {
           user?.uid ?
 
             <ul className="menu menu-horizontal px-1">
-              <li><Link to='/myorders'>My Orders</Link></li>
+              <li><Link to={`/orders/${user?.email}`}>My Orders</Link></li>
               <li><Link to='/orders'>Orders</Link></li>
               <li><p>{user?.displayName}</p></li>
               <li><button onClick={logOutHandler}>Sign Out</button></li>
