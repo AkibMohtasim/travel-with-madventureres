@@ -1,0 +1,29 @@
+.newsletter-container {
+  position: relative;
+}
+
+.newsletter-text-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+}
+
+.newsletter-text-overlay h2 {
+  color: white;
+  font-size: 2.8em;
+  text-shadow: 1px 1px black;
+  font-family: 'Delicious Handrawn', cursive;
+}
+
+.newsletter-text-overlay p {
+  color: rgba(255, 255, 255, 0.774);
+  font-size: 1.5em;
+  text-shadow: 1px 1px black;
+  font-family: 'Delicious Handrawn', cursive;
+  font-weight: 100;
+}
