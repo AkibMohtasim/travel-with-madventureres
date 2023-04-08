@@ -27,7 +27,7 @@ const SubScribe = () => {
 
         <form className='flex justify-center w-full my-10' onSubmit={submitHandler}>
           <input className="input input-bordered input-accent w-full max-w-xs mr-2" type="email" name='email' placeholder='Your Email' required />
-          <input className='btn btn-outline btn-success' type="submit" value="Submit" />
+          <input className='btn btn-outline text-white' type="submit" value="Submit" />
         </form>
 
         <p>{text}</p>

@@ -25,7 +25,7 @@ const AdventureDetails = () => {
       <img src={images[3]} alt="" />
       <p>{descriptions[3]}</p>
       <ul>
-        <h3>Things to do in Nairobi</h3>
+        <h3>Things to do here - </h3>
         {
           thingsToDo?.map(thing => <li key={thing}>{thing}</li>)
         }

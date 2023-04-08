@@ -1,8 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
+
+  const [errText, setErrText] = useState(null);
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -23,8 +25,13 @@ const Login = () => {
         console.log(user);
         form.reset();
         navigate(from, { replace: true });
+        setErrText(null);
       })
-      .catch(err => console.error(err.message))
+      .catch(err => {
+        console.error(err.message)
+        setErrText(<p>User not found.</p>);
+      });
+
   }
 
   const googleSignInHandler = () => {
@@ -32,6 +39,7 @@ const Login = () => {
       .then(result => {
         const user = result.user;
         console.log(user);
+        navigate(from, { replace: true });
       })
       .catch(err => console.error(err.message))
   }
@@ -47,13 +55,14 @@ const Login = () => {
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="text" name='email' placeholder="email" className="input input-bordered w-full max-w-xs" required />
+          <input type="email" name='email' placeholder="email" className="input input-bordered w-full max-w-xs" required />
         </div>
         <div>
           <label className="label">
             <span className="label-text">Password</span>
           </label>
           <input type="password" name='password' placeholder="password" className="input input-bordered w-full max-w-xs" required />
+          {errText}
         </div>
 
         <button type="submit" className="btn btn-active btn-ghost my-2">Login</button>

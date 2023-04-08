@@ -9,6 +9,7 @@ import Login from "../components/Login/Login";
 import SignUp from "../components/SignUp/SignUp";
 import MyOrders from "../components/Orders/MyOrders/MyOrders";
 import PrivateRoute from "./PrivateRoute";
+import AddNewAdventure from "../components/Adventures/AddNewAdventure/AddNewAdventure";
 
 const router = createBrowserRouter([
   {
@@ -37,14 +38,12 @@ const router = createBrowserRouter([
       },
       {
         path: '/orders',
-        loader: () => fetch('http://localhost:5000/api/orders'),
         element: <PrivateRoute>
           <AllOrders />
         </PrivateRoute>
       },
       {
         path: '/orders/:orderEmail',
-        loader: ({ params }) => fetch(`http://localhost:5000/api/orders/${params.orderEmail}`),
         element: <PrivateRoute>
           <MyOrders />
         </PrivateRoute>
@@ -63,6 +62,12 @@ const router = createBrowserRouter([
           <PrivateRoute>
             <MyOrders />
           </PrivateRoute>
+      },
+      {
+        path: '/addnewadventure',
+        element: <PrivateRoute>
+          <AddNewAdventure />
+        </PrivateRoute>
       }
 
     ]

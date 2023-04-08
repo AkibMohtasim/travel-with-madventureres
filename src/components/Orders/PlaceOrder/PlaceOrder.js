@@ -23,7 +23,8 @@ const PlaceOrder = () => {
       customerName,
       email,
       date,
-      message
+      message,
+      status: 'Pending'
     }
 
     fetch('http://localhost:5000/api/orders', {
@@ -36,7 +37,7 @@ const PlaceOrder = () => {
       .then(res => res.json())
       .then(data => {
         console.log(data)
-        if (data.service) {
+        if (data) {
           alert('Order Placed Successfully')
           form.reset();
         }
@@ -69,15 +70,15 @@ const PlaceOrder = () => {
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text text-white">When You want to go?</span>
+                  <span className="label-text text-white">When you want to go?</span>
                 </label>
                 <input type="date" name='date' className="input input-bordered w-full max-w-xs" required />
               </div>
               <div>
                 <label className="label">
-                  <span className="label-text text-white">Additional Message</span>
+                  <span className="label-text text-white">Additional message</span>
                 </label>
-                <textarea name="message" className="textarea textarea-bordered w-80 text-white" placeholder="Additional Message"></textarea>
+                <textarea name="message" className="textarea textarea-bordered w-80" placeholder="Additional Message"></textarea>
               </div>
               <button type="submit" className="btn btn-outline text-white mt-2">Submit</button>
             </form>
