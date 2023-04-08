@@ -12,8 +12,8 @@ const ImgGallery = () => {
 
   return (
     <div className='my-20'>
-      <div>
-        <h2 className='text-5xl text-center my-20'>Image Section</h2>
+      <div className='flex flex-col justify-center'>
+        <h2 className='text-5xl font-bold text-center mt-20 mb-10 custom-font'>See some of the <span style={{ color: 'orangered' }}>Images</span></h2>
       </div>
 
       <div className='grid grid-cols-2 lg:grid-cols-4 gap-2 place-items-center mx-auto h-[60vh] lg:h-[80vh] overflow-y-auto overflow-x-hidden'>

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
 
+.custom-font {
+  font-family: 'Delicious Handrawn', cursive;
+}
+
 
 .image-container {
   position: relative;

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import OrderTable from '../OrderTable/OrderTable';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 
 
 
@@ -8,8 +9,8 @@ import { AuthContext } from '../../../contexts/AuthProvider';
 const MyOrders = () => {
 
   const { user } = useContext(AuthContext);
-
   const [orders, setOrders] = useState([]);
+  useTitle('My Orders');
 
   useEffect(() => {
     fetch(`http://localhost:5000/api/orders/${user.email}`)

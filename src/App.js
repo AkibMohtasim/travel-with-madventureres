@@ -5,7 +5,7 @@ import Main from './layout/Main';
 
 function App() {
   return (
-    <div className='lg:w-3/4 m-auto'>
+    <div className='lg:px-10 m-auto'>
       <RouterProvider router={router}>
         <Main></Main>
       </RouterProvider>

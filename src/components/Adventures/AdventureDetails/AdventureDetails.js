@@ -12,27 +12,27 @@ const AdventureDetails = () => {
     showDiv = <button className="btn btn-square loading"></button>
   }
   else {
-    showDiv = <div className='adventure-details'>
-      <h2>{name}</h2>
-      <p>{duration}</p>
-      <h4>Locations: {locations}</h4>
+    showDiv = <div className='adventure-details adventure-font'>
+      <h2 className='custom-font text-5xl font-bold border-b-2 border-orange-500 py-2'>{name}</h2>
+      <p className='text-xl'>{duration}</p>
+      <h4 className='text-2xl text-center mb-10'>Locations: {locations}</h4>
       <img src={images[0]} alt="" />
-      <p>{descriptions[0]}</p>
+      <p className='text-lg'>{descriptions[0]}</p>
       <img src={images[1]} alt="" />
-      <p>{descriptions[1]}</p>
+      <p className='text-lg'>{descriptions[1]}</p>
       <img src={images[2]} alt="" />
-      <p>{descriptions[2]}</p>
+      <p className='text-lg'>{descriptions[2]}</p>
       <img src={images[3]} alt="" />
-      <p>{descriptions[3]}</p>
+      <p className='text-lg'>{descriptions[3]}</p>
       <ul>
-        <h3>Things to do here - </h3>
+        <h3 className='text-lg'>Things to do here - </h3>
         {
-          thingsToDo?.map(thing => <li key={thing}>{thing}</li>)
+          thingsToDo?.map(thing => <li className='' key={thing}>{thing}</li>)
         }
 
       </ul>
-      <h3>Bdt {price}</h3>
-      <Link className='btn btn-outline-primary' to={`/placeOrder/${_id}`}>ADD TO YOUR BUCKET</Link>
+      <h3 className=' text-lg font-bold mb-8'>Price: {price} bdt</h3>
+      <Link className='btn btn-outline btn-ghost' to={`/placeOrder/${_id}`}>ADD TO YOUR BUCKET</Link>
     </div>
   }
 

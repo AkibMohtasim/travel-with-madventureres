@@ -18,23 +18,26 @@ const Header = () => {
   }
 
   return (
-    <div className="navbar bg-slate-100">
-      <div className="flex-1 ">
-        <Link to='/' className="btn btn-ghost normal-case text-xl">MadVenturers</Link>
+    <div className="flex flex-col md:flex-row items-center md:justify-between bg-slate-100 p-2 flex-wrap">
+
+      {/* flex item */}
+      <div>
+        <Link to='/' className="btn btn-ghost text-xl custom-font">MadVenturers</Link>
       </div>
-      <div className="flex-none">
-        <ul className="menu menu-horizontal px-1">
-          <li><Link to='/adventures'>Adventures</Link></li>
+
+      <div className="flex items-center">
+        {/* flex item starts */}
+
+        <ul>
+          <li><Link className='btn btn-ghost' to='/adventures'>Adventures</Link></li>
         </ul>
+
+        {/* flex item ends */}
         {
           user?.uid ?
 
-            // <ul className="menu menu-horizontal px-1">
-            //   <li><Link to={`/orders/${user?.email}`}>My Orders</Link></li>
-            //   <li><Link to='/orders'>Orders</Link></li>
-            //   <li><p>{user?.displayName}</p></li>
-            //   <li><button onClick={logOutHandler}>Sign Out</button></li>
-            // </ul>
+            // Another flex item starts
+
             <div className="flex-none gap-2">
               <div className="dropdown dropdown-end">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -54,8 +57,18 @@ const Header = () => {
                 </ul>
               </div>
             </div>
+
+            // Another flex item ends
             :
-            <ul><li><Link to='/login'>Login</Link></li></ul>
+
+            // Another flex item starts
+
+            <ul className='flex items-center'>
+              <li className='mr-2 btn btn-ghost'><Link to='/login'>Login</Link></li>
+              <li className='ml-2 btn btn-ghost'><Link to='/signup'>Sign Up</Link></li>
+            </ul>
+
+          // Another flex item ends
         }
       </div>
     </div>

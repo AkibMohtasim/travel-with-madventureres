@@ -14,16 +14,17 @@
 }
 
 .newsletter-text-overlay h2 {
+  border-bottom: 2px dashed wheat;
+  padding: 0px 25px;
   color: white;
   font-size: 2.8em;
-  text-shadow: 1px 1px black;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.507);
   font-family: 'Delicious Handrawn', cursive;
 }
 
 .newsletter-text-overlay p {
-  color: rgba(255, 255, 255, 0.774);
-  font-size: 1.5em;
+  color: rgba(255, 255, 255, 0.874);
+  font-size: 1.1em;
   text-shadow: 1px 1px black;
-  font-family: 'Delicious Handrawn', cursive;
-  font-weight: 100;
+  font-weight: 400;
 }

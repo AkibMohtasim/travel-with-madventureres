@@ -10,7 +10,11 @@ const Home = () => {
     <div>
       <Banner></Banner>
       <About></About>
-      <Adventures></Adventures>
+      <Adventures>
+        <div className='mb-5'>
+          <h2 className='custom-font text-5xl font-bold'>Our <span style={{ color: 'orangered' }}>Adventures</span></h2>
+        </div>
+      </Adventures>
       <ImgGallery></ImgGallery>
       <SubScribe></SubScribe>
     </div>

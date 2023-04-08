@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import AdventureCard from './AdventureCard/AdventureCard';
+import useTitle from '../../../hooks/useTitle';
 
-const Adventures = () => {
+const Adventures = ({ children }) => {
 
   const [adventures, setAdventures] = useState([]);
+
+  useTitle('Adventures');
 
   useEffect(() => {
 
@@ -20,16 +23,21 @@ const Adventures = () => {
     </div>
   }
 
+  //grid lg:grid-cols-3 gap-5 place-content-center
+
   return (
-    <div className='grid lg:grid-cols-3 gap-5'>
-      {
-        adventures.map(adventure =>
-          <AdventureCard
-            key={adventure._id}
-            adventure={adventure}
-          >
-          </AdventureCard>)
-      }
+    <div className='flex flex-col items-center'>
+      {children}
+      <div className='flex flex-wrap justify-center'>
+        {
+          adventures.map(adventure =>
+            <AdventureCard
+              key={adventure._id}
+              adventure={adventure}
+            >
+            </AdventureCard>)
+        }
+      </div>
     </div>
   );
 };

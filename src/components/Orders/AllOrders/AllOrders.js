@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import OrderTable from '../OrderTable/OrderTable';
 import { AuthContext } from '../../../contexts/AuthProvider';
+import useTitle from '../../../hooks/useTitle';
 
 const AllOrders = () => {
 
@@ -9,6 +10,7 @@ const AllOrders = () => {
   const [orders, setOrders] = useState([]);
   const [btnStatus, setBtnStatus] = useState(true);
 
+  useTitle('All Orders');
 
 
   useEffect(() => {
