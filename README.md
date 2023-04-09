@@ -2,7 +2,7 @@
 
 This project was created with React, and the styling was done by Tailwind and Daisy UI 
 
-[Live Website]('https://travel-with-madventurers.web.app').
+[Live Website](https://travel-with-madventurers.web.app).
 
 
 ## This is a full-stack website
