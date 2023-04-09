@@ -27,7 +27,7 @@ const PlaceOrder = () => {
       status: 'Pending'
     }
 
-    fetch('http://localhost:5000/api/orders', {
+    fetch('https://travel-with-madventurers-server.vercel.app/api/orders', {
       method: 'post',
       headers: {
         'content-type': 'application/json'
@@ -46,12 +46,12 @@ const PlaceOrder = () => {
   }
 
   return (
-    <div>
+    <div className='adventure-font'>
       <div className="hero min-h-[50vh]" style={{ backgroundImage: `url(${images[0]})` }}>
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">{name}</h1>
+            <h1 className="mb-5 text-5xl font-bold custom-font">{name}</h1>
             <p className="mb-5">{duration}</p>
             <p className="mb-5">Locations: {locations}</p>
             <p className="mb-5">Price: {price} Bdt</p>

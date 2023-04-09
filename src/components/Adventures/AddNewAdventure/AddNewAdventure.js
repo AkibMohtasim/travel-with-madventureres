@@ -34,7 +34,7 @@ const AddNewAdventure = () => {
     const confirm = window.prompt(`Are you an Admin? Type "ServiceAdmin" to confirm`);
 
     if (confirm === 'ServiceAdmin') {
-      fetch('http://localhost:5000/api/adventures', {
+      fetch('https://travel-with-madventurers-server.vercel.app/api/adventures', {
         method: 'post',
         headers: {
           'content-type': 'application/json'

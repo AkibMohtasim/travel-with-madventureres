@@ -26,12 +26,12 @@ const router = createBrowserRouter([
       },
       {
         path: '/adventures/:id',
-        loader: ({ params }) => fetch(`http://localhost:5000/api/adventures/${params.id}`),
+        loader: ({ params }) => fetch(`https://travel-with-madventurers-server.vercel.app/api/adventures/${params.id}`),
         element: <AdventureDetails />
       },
       {
         path: '/placeOrder/:id',
-        loader: ({ params }) => fetch(`http://localhost:5000/api/adventures/${params.id}`),
+        loader: ({ params }) => fetch(`https://travel-with-madventurers-server.vercel.app/api/adventures/${params.id}`),
         element: <PrivateRoute>
           <PlaceOrder />
         </PrivateRoute>

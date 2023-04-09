@@ -4,7 +4,7 @@ const ImgGallery = () => {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/images`)
+    fetch(`https://travel-with-madventurers-server.vercel.app/api/images`)
       .then(res => res.json())
       .then(data => setImages(data))
   }, [images])

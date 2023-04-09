@@ -19,7 +19,7 @@ const AllOrders = () => {
       setBtnStatus(false)
     }
 
-    fetch(`http://localhost:5000/api/orders`)
+    fetch(`https://travel-with-madventurers-server.vercel.app/api/orders`)
       .then(res => res.json())
       .then(data => setOrders(data))
   }, [user.email])
@@ -28,7 +28,7 @@ const AllOrders = () => {
     const proceed = window.confirm('Are you sure you want to delete?');
 
     if (proceed) {
-      fetch(`http://localhost:5000/api/orders/${id}`, {
+      fetch(`https://travel-with-madventurers-server.vercel.app/api/orders/${id}`, {
         method: 'delete'
       })
         .then(res => res.json())
@@ -48,7 +48,7 @@ const AllOrders = () => {
 
     const confirm = window.prompt(`Type "Admin" to approve the order`);
     if (confirm === "Admin") {
-      fetch(`http://localhost:5000/api/orders/${id}`, {
+      fetch(`https://travel-with-madventurers-server.vercel.app/api/orders/${id}`, {
         method: 'PATCH',
         headers: {
           'content-type': 'application/json'

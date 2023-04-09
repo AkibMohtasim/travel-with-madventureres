@@ -14,7 +14,7 @@ const MyOrders = () => {
   useTitle('My Orders');
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/orders/${user.email}`)
+    fetch(`https://travel-with-madventurers-server.vercel.app/api/orders/${user.email}`)
       .then(res => res.json())
       .then(data => setOrders(data))
   }, [user?.email])
@@ -23,7 +23,7 @@ const MyOrders = () => {
     const proceed = window.confirm('Are you sure you want to delete?');
 
     if (proceed) {
-      fetch(`http://localhost:5000/api/orders/${id}`, {
+      fetch(`https://travel-with-madventurers-server.vercel.app/api/orders/${id}`, {
         method: 'delete'
       })
         .then(res => res.json())

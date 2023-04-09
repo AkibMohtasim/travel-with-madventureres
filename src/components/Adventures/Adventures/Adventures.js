@@ -10,7 +10,7 @@ const Adventures = ({ children }) => {
 
   useEffect(() => {
 
-    fetch('http://localhost:5000/api/adventures')
+    fetch('https://travel-with-madventurers-server.vercel.app/api/adventures')
       .then(res => res.json())
       .then(data => setAdventures(data))
   }, [adventures])
