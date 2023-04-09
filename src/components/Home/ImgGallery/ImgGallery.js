@@ -7,7 +7,19 @@ const ImgGallery = () => {
     fetch(`http://localhost:5000/api/images`)
       .then(res => res.json())
       .then(data => setImages(data))
-  }, [])
+  }, [images])
+
+
+
+
+  if (!images.length) {
+    return (
+      <div className='flex flex-col items-center my-20'>
+        <h2 className='text-5xl font-bold text-center mt-20 mb-10 custom-font'>See some of the <span style={{ color: 'orangered' }}>Images</span></h2>
+        <button className="btn btn-square loading"></button>
+      </div>
+    );
+  }
 
 
   return (

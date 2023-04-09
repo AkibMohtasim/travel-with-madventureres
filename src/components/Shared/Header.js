@@ -46,6 +46,7 @@ const Header = () => {
                   </div>
                 </label>
                 <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                  <li><div className='font-bold cursor-default'>{user.displayName}</div></li>
                   <li>
                     <Link to={`/orders/${user?.email}`} className="justify-between">
                       My Orders

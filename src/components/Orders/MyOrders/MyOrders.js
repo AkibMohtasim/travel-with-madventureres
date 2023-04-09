@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import OrderTable from '../OrderTable/OrderTable';
 import { AuthContext } from '../../../contexts/AuthProvider';
 import useTitle from '../../../hooks/useTitle';
+import { FaTrashAlt } from "react-icons/fa";
 
 
 
@@ -38,23 +39,37 @@ const MyOrders = () => {
     }
   }
 
+  const statusUpdateHandler = () => {
+    alert('Our Admin can change the status');
+  }
+
   return (
-    <div className="overflow-x-auto w-full">
+    <table className="table-auto w-full my-10">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Adventurer's Name</th>
+          <th>Adventure</th>
+          <th>Starts From</th>
+          <th>Status</th>
+        </tr>
+      </thead>
       {
         orders.map(order => <OrderTable
           key={order._id}
           order={order}
+          statusUpdateHandler={statusUpdateHandler}
         >
           <th>
             <label>
-              <button onClick={() => orderDeleteHandler(order._id)} className="btn btn-circle btn-outline">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
+              <button onClick={() => orderDeleteHandler(order._id)}>
+                <FaTrashAlt />
               </button>
             </label>
           </th>
         </OrderTable>)
       }
-    </div>
+    </table>
   );
 };
 

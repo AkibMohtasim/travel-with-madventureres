@@ -13,14 +13,17 @@ const Adventures = ({ children }) => {
     fetch('http://localhost:5000/api/adventures')
       .then(res => res.json())
       .then(data => setAdventures(data))
-  }, [])
+  }, [adventures])
 
   // console.log(adventures)
 
   if (!adventures.length) {
-    return <div className='flex justify-center my-20'>
-      <button className="btn btn-square loading"></button>
-    </div>
+    return (
+      <div className='flex flex-col items-center my-20'>
+        {children}
+        <button className="btn btn-square loading"></button>
+      </div>
+    )
   }
 
   //grid lg:grid-cols-3 gap-5 place-content-center
