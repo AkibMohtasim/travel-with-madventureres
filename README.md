@@ -5,7 +5,7 @@ This project was created with React, and the styling was done by Tailwind and Da
 [Live Website](https://travel-with-madventurers.web.app).
 
 
-## This is a full-stack website
+## This is a full-stack and responsive website
 
 Here the user can browse through the services (Adventures) that the Agency provides and the user can place and cancel any order if he/she wants.
 
